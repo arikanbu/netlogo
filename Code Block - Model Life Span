@@ -1,0 +1,12 @@
+;; Average number of ticks needed for the simulation to reach terminal state
+to-report model-life-span [iterations]
+  let tick-sum 0 
+  repeat iterations 
+  [
+    setup;
+    go;
+    set tick-sum  tick-sum + ticks;
+  ]
+  report tick-sum / iterations
+end
+
